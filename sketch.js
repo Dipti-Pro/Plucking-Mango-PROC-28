@@ -43,36 +43,20 @@ function draw() {
   image(boy ,200,340,200,300);
   //Engine.update(engine)
   
-
+	
   treeObj.display();
   stoneObj.display();
   mango1.display();
-  mango2.display();
-  mango3.display();
-  mango4.display();
-  mango6.display();
- mango7.display();
-  mango8.display();
-  mango9.display();
-  mango10.display();
-  mango11.display();
-  mango12.display();
-  stoneObj.display();
+	//display mangoes here
+  
+  
 
   groundObject.display();
   launcherObject.display();
   detectollision(stoneObj,mango1);
-  detectollision(stoneObj,mango2);
-  detectollision(stoneObj,mango3);
-  detectollision(stoneObj,mango4);
-  detectollision(stoneObj,mango5);
-  detectollision(stoneObj,mango6);
-  detectollision(stoneObj,mango7);
-  detectollision(stoneObj,mango8);
-  detectollision(stoneObj,mango9);
-  detectollision(stoneObj,mango10);
-  detectollision(stoneObj,mango11);
-  detectollision(stoneObj,mango12);
+  
+	//for other mangoes
+	
 }
 
 function mouseDragged()
@@ -83,7 +67,6 @@ function mouseDragged()
 function mouseReleased()
 {
 	launcherObject.fly();
-    // distance=int(dist(stoneObj.x,stoneObj.y,mango1.x,mango1.y));
 }
 
 function keyPressed() {
@@ -94,20 +77,15 @@ function keyPressed() {
   }
 
   function detectollision(lstone,lmango){
-	/*var collision = Matter.SAT.collides(lstone,lmango);
-	if(collision.collided){
-		console.log("collided");
-		Matter.Body.setStatic(lmango,false);	
-	}*/
+	
   mangoBodyPosition=lmango.body.position
   stoneBodyPosition=lstone.body.position
   
   var distance=dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y)
-  //console.log(distance)
- // console.log(lmango.r+lstone.r)
+
   	if(distance<=lmango.r+lstone.r)
     {
-      //console.log(distance);
+      
   	  Matter.Body.setStatic(lmango.body,false);
     }
 
